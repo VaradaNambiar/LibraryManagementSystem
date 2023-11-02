@@ -5,8 +5,12 @@
 #include "Inventory.h"
 #include "Actors.h"
 #include "Book.h"
+#include "PaymentManager.h"
 
 using namespace std;
+
+PaymentManager* PaymentManager::instance = nullptr;
+mutex PaymentManager::mtx;
 
 int main()
 {
@@ -21,20 +25,29 @@ int main()
     rahul.AddBook(MockingJay);
     rahul.AddBook(WingsOfFire);
     library->ShowBooks();
-
+    cout << endl;
 
 	Buyer varada;
     varada.AddBook(DaVinciCode);
+    cout << "Varada Inventory" << endl;
     varada.DisplayItemsInInventory();
+    cout << endl;
 
     cout << "Download book" << endl;
     varada.DownloadBook(DaVinciCode);
+    cout << endl;
 
-    cout << "Remove book" << endl;
+	cout << "Remove book" << endl;
     varada.RemoveBook(DaVinciCode);
     varada.DisplayItemsInInventory();
+    cout << endl;
 
-    
+	cout << "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" << endl;
+    cout << "    Buying/downloading a book" << endl;
+    cout << endl;
+    PaymentManager* paymentManager = PaymentManager::GetInstance();
+    paymentManager->BuyBook(varada, DaVinciCode);
+    varada.DisplayItemsInInventory();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

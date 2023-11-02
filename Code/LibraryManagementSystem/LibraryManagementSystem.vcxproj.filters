@@ -21,6 +21,15 @@
     <ClCompile Include="Inventory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PaymentFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PaymentMethods.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PaymentManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actors.h">
@@ -30,6 +39,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Book.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PaymentManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PaymentFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PaymentMethods.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
